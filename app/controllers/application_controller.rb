@@ -13,7 +13,22 @@ class ApplicationController < ActionController::Base
       'application#menu'
     elsif get '/profile/lucario'
       'application#lucario'
+    elsif get '/profile/archivist'
+      'application#archivist'
+    elsif get '/profile/ike'
+      'application#ike'
+    elsif get '/profile/spyro'
+      'application#spyro'
+    elsif get '/profile/dk'
+      'application#dk'
+    elsif get '/profile/barb'
+      'application#barb'
+        @facebook = Facebook.find_by_id(params['id'])  
     render 'show'
+end
+   def destroy
+  g = Gif.find_by_id(params['id'])
+  g.destroy
 end
 end
 end
